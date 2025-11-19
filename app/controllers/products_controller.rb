@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.expect(product: [:name])
+      params.expect(product: [ :name ])
     end
 
     def set_product
