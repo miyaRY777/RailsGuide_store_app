@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
+  # 未認証のアカウントは、製品一覧と詳細ページのみアクセス可
+  allow_unauthenticated_access only: %i[ index show ]
   def index
     @products = Product.all
   end
